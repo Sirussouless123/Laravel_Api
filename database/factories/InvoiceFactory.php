@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class InvoiceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invoice_number' => Str::uuid(),
+            'total_vat' => $vat = $this->faker->randomFloat(2, 10, 300),
+            'total_price_excluding_vat' => $totalPriceExcludingVat = $this->faker->randomFloat(2, 10, 1_000),
+            'total_price' => $vat + $totalPriceExcludingVat,
         ];
     }
 }
