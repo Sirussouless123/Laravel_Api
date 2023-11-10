@@ -1,3 +1,3 @@
 # Laravel_Api
 
-# Ecriture d'Api avec larave 
+# Ecriture d'Api avec laravel
